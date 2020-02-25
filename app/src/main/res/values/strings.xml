@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">AgendaIS</string>
+    <string name="bienvenido_login">Bienvenido</string>
+    <string name="nombre_usuario">Nombre de usuario</string>
+    <string name="contra_usuario">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="registro">Registro</string>
+    <string name="administrar_usuarios">Administrar</string>
+    <string name="titulo_usuarios">Usuarios y Admins</string>
+    <string name="descripcion_usuario">Registrar, Modificar, y Eliminar usuarios del sistema para la administración de la Agenda.</string>
+    <string name="descripcion_registro_contacto">Registrar un contacto nuevo en la Agenda.</string>
+    <string name="titulo_registro_contacto">Registrar Contacto</string>
+    <string name="registrar_contacto">Registrar</string>
+    <string name="titulo_admin_usuarios">Administrar Contactos</string>
+    <string name="descripcion_admin_usuario">Modifica y Elimina los contactos registrados en la Agenda.</string>
+    <string name="ver_contactos">Ver Contactos</string>
+    <string name="titulo_contactos">Contactos en Agenda</string>
+    <string name="descripcion_contactos">Buscar y Ver los contactos existentes en la Agenda.</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="contra_usuario2">Repetir Contraseña</string>
+</resources>

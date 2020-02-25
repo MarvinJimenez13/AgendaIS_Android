@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/fondoagenda"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/default_linear"
+            tools:context=".HomeAdmin">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRegistroContacto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_def"
+                android:layout_marginEnd="@dimen/margin_def"
+                android:layout_marginTop="@dimen/margin_def"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_linear"
+                    android:layout_marginEnd="@dimen/default_linear_registro"
+                    android:layout_marginStart="@dimen/none_margin">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgRegistroContacto"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/contacto"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/registroContactoBTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/registrar_contacto"
+                        android:layout_marginTop="@dimen/none_margin"
+                        android:layout_marginStart="@dimen/common_padding_min"
+                        android:layout_marginEnd="@dimen/common_padding_min"
+                        android:layout_marginBottom="@dimen/common_padding_min"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imgRegistroContacto"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+                    <TextView
+                        android:id="@+id/tvTitleRegistroContacto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/titulo_registro_contacto"
+                        android:layout_marginStart="@dimen/default_linear"
+                        android:layout_marginEnd="@dimen/default_linear_registro"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/imgRegistroContacto"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/default_linear"
+                        android:text="@string/descripcion_registro_contacto"
+                        android:textColor="@android:color/black"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        app:layout_constraintStart_toStartOf="@id/tvTitleRegistroContacto"
+                        app:layout_constraintEnd_toEndOf="@id/tvTitleRegistroContacto"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleRegistroContacto"
+                        app:layout_constraintBottom_toBottomOf="@id/imgRegistroContacto"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardContactos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_def"
+                android:layout_marginEnd="@dimen/margin_def"
+                android:layout_marginTop="@dimen/margin_def"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_linear"
+                    android:layout_marginEnd="@dimen/default_linear"
+                    android:layout_marginStart="@dimen/none_margin">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgContactos"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@mipmap/contactos"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/verContactosBTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ver_contactos"
+                        android:layout_marginTop="@dimen/common_padding_min"
+                        android:layout_marginStart="@dimen/common_padding_min"
+                        android:layout_marginEnd="@dimen/common_padding_min"
+                        android:layout_marginBottom="@dimen/common_padding_min"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imgContactos"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+                    <TextView
+                        android:id="@+id/tvTitleContactos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/titulo_contactos"
+                        android:layout_marginStart="@dimen/default_linear"
+                        android:layout_marginEnd="@dimen/default_linear"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/imgContactos"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="@string/descripcion_contactos"
+                        android:textColor="@android:color/black"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        app:layout_constraintStart_toStartOf="@id/tvTitleContactos"
+                        app:layout_constraintEnd_toEndOf="@id/tvTitleContactos"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleContactos"
+                        app:layout_constraintBottom_toTopOf="@id/verContactosBTN"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_def"
+                android:layout_marginEnd="@dimen/margin_def"
+                android:layout_marginTop="@dimen/margin_def"
+                android:clickable="true"
+                android:focusable="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCerrarSesion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_padding_min"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_min"
+                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:text="@string/cerrar_sesion"
+                    android:onClick="cerrarSesion"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

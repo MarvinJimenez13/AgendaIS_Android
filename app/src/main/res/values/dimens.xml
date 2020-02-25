@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_linear">16dp</dimen>
+    <dimen name="margin_def">8dp</dimen>
+    <dimen name="none_margin">0dp</dimen>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="default_linear_registro">20dp</dimen>
+</resources>
