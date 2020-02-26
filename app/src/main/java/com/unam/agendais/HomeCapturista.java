@@ -3,10 +3,15 @@ package com.unam.agendais;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 
+import com.unam.agendais.controladores.AdminSQLiteOpenHelper;
+
 public class HomeCapturista extends AppCompatActivity {
+
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +21,12 @@ public class HomeCapturista extends AppCompatActivity {
 
     public void cerrarSesion(View view){
 
-        Intent intent = new Intent(this, MainActivity.class);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "sesion", null, 1);
+        SQLiteDatabase baseDeDatos = admin.getWritableDatabase();
+        baseDeDatos.delete("sesion", "id=1", null);
+        baseDeDatos.close();
+
+        intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
 
