@@ -49,7 +49,7 @@ public class ServicioTaskLogin extends AsyncTask<Void, Void, String> {
 
         String result= null;
 
-        String wsURL = linkrequestAPI;
+        String wsURL = this.linkrequestAPI;
         URL url = null;
         try {
 
