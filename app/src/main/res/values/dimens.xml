@@ -5,4 +5,5 @@
     <dimen name="none_margin">0dp</dimen>
     <dimen name="common_padding_min">8dp</dimen>
     <dimen name="default_linear_registro">20dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
 </resources>

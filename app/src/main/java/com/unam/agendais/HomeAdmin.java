@@ -19,6 +19,13 @@ public class HomeAdmin extends AppCompatActivity {
         setContentView(R.layout.activity_home_admin);
     }
 
+    public void administrarUsuariosAdmins(View view){
+
+        intent = new Intent(this, UsuariosAdmins.class);
+        startActivity(intent);
+
+    }
+
     public void cerrarSesion(View view){
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "sesion", null, 1);

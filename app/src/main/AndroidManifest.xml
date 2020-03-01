@@ -15,9 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/MyTheme.DayNight"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HomeCapturista"></activity>
+        <activity android:name=".UsuariosAdmins"
+                  android:parentActivityName=".HomeAdmin"></activity>
+        <activity android:name=".HomeCapturista" />
         <activity android:name=".HomeAdmin" />
         <activity android:name=".RegistroUsuario" />
+        <activity
+            android:name=".ScrollActivity"
+            android:label="@string/title_activity_scroll"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

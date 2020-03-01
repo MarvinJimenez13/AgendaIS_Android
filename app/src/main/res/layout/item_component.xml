@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/mtrl_card_spacing"
+    android:layout_marginStart="@dimen/mtrl_card_spacing"
+    android:layout_marginEnd="@dimen/mtrl_card_spacing">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/admin"
+            android:layout_marginStart="@dimen/common_padding_min"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:paddingStart="@dimen/default_linear"
+            android:paddingEnd="@dimen/common_padding_min"
+            app:layout_constraintStart_toEndOf="@id/imgFoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/tvComentario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:paddingStart="@dimen/default_linear"
+            android:paddingEnd="@dimen/common_padding_min"
+            android:paddingTop="@dimen/margin_def"
+            android:paddingBottom="@dimen/default_linear"
+            app:layout_constraintStart_toEndOf="@id/imgFoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNombre"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

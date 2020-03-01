@@ -19,4 +19,5 @@
     <string name="descripcion_contactos">Buscar y Ver los contactos existentes en la Agenda.</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="contra_usuario2">Repetir Contraseña</string>
+    <string name="title_activity_scroll">ScrollActivity</string>
 </resources>
