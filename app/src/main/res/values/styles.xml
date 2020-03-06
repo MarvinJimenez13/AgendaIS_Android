@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPersonal</item>
-        <item name="colorPrimaryDark">@color/colorPersonalDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -17,16 +17,14 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="FullScreenDialog" parent="ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Window.Fullscreen">
 
-    <color name="colorPersonal">#006064</color>
-    <color name="colorPersonalDark">#00838F</color>
+        <item name="android:windowAnimationStyle">
 
-    <style name="MyTheme.DayNight.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+            @style/Animation.AppCompat.Dialog
+
+        </item>
+
     </style>
 
-    <style name="MyTheme.DayNight.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="MyTheme.DayNight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

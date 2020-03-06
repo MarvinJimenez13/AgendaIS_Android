@@ -36,4 +36,20 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         tools:listitem="@layout/item_component"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_padding_default"
+        android:src="@drawable/ic_person"
+        app:tint="@color/colorPrimaryDark"
+        app:rippleColor="@android:color/holo_blue_light"
+        app:borderWidth="0dp"
+        app:elevation="@dimen/common_padding_default"
+        app:maxImageSize="38dp"
+        app:backgroundTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

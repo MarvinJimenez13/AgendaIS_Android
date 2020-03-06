@@ -2,54 +2,28 @@ package com.unam.agendais;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.unam.agendais.adaptadores.ComponentAdapter;
-import com.unam.agendais.controladores.AdminSQLiteOpenHelper;
-import com.unam.agendais.fragments.DetallesFragment;
-import com.unam.agendais.fragments.RegistroUsuariosFragment;
-import com.unam.agendais.utils.Constantes;
 
-import java.util.ArrayList;
+import android.content.Intent;
+import android.os.Bundle;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class UsuariosAdmins extends AppCompatActivity {
+public class RegistarContacto extends AppCompatActivity {
 
-    public static ComponentAdapter myAdapter;
     private Intent intent;
-    @BindView(R.id.recyclerView)
-    RecyclerView recyclerView;
-    @BindView(R.id.tool)
+    private Unbinder mUnbinder;
+    @BindView(R.id.toolbarC)
     Toolbar toolbar;
-    @BindView(R.id.fabNuevo)
-    FloatingActionButton fabNuevo;
-    Unbinder mUnbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usuarios_admins);
+        setContentView(R.layout.activity_registar_contacto);
         mUnbinder = ButterKnife.bind(this);
 
-        fabNuevo.setOnClickListener(v -> {
-
-            RegistroUsuariosFragment registro = new RegistroUsuariosFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            registro.show(transaction, RegistroUsuariosFragment.TAG);
-
-        });
-
-        configAdapter();
-        configRecyclerView();
-
-        toolbar.setTitle("Admins y Capturistas");
+        toolbar.setTitle("Registrar Contacto");
         toolbar.setNavigationIcon(R.drawable.ic_keyboard);
         toolbar.setNavigationOnClickListener(v -> {
 
@@ -97,24 +71,9 @@ public class UsuariosAdmins extends AppCompatActivity {
 
     }
 
-    public void configAdapter(){
-
-        myAdapter = new ComponentAdapter(new ArrayList<>());
-        myAdapter.add(DetallesFragment.getmInstance("1", "Andrea Berenice Cabrera Rivera", "Administrador"));
-        myAdapter.add(DetallesFragment.getmInstance("2", "Martin Jiménez Rodriguez", "Capturista"));
-
-    }
-
-    private void configRecyclerView(){
-
-        recyclerView.setAdapter(myAdapter);
-
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
         mUnbinder.unbind();
     }
-
 }

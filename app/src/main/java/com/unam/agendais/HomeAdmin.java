@@ -23,6 +23,15 @@ public class HomeAdmin extends AppCompatActivity {
 
         intent = new Intent(this, UsuariosAdmins.class);
         startActivity(intent);
+        finish();
+
+    }
+
+    public void registrarContacto(View view){
+
+        intent = new Intent(this, RegistarContacto.class);
+        startActivity(intent);
+        finish();
 
     }
 

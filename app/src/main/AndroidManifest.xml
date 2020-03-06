@@ -13,10 +13,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/MyTheme.DayNight"
+        android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UsuariosAdmins"
-                  android:parentActivityName=".HomeAdmin"></activity>
+        <activity android:name=".RegistarContacto"></activity>
+        <activity
+            android:name=".UsuariosAdmins"
+            android:parentActivityName=".HomeAdmin" />
         <activity android:name=".HomeCapturista" />
         <activity android:name=".HomeAdmin" />
         <activity android:name=".RegistroUsuario" />

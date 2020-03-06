@@ -37,8 +37,8 @@ public class RegistroUsuario extends AppCompatActivity {
         ButterKnife.bind(this);
 
         String opciones[] = {"Administrador", "Capturista"};
-        ArrayAdapter<String> apater = new ArrayAdapter<>(this, R.layout.spinner_item_tipo_usuario, opciones);
-        spinnerUsuario.setAdapter(apater);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item_tipo_usuario, opciones);
+        spinnerUsuario.setAdapter(adapter);
 
     }
 
