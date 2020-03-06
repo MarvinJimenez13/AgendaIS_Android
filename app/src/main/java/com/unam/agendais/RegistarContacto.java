@@ -5,6 +5,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,12 +18,18 @@ public class RegistarContacto extends AppCompatActivity {
     private Unbinder mUnbinder;
     @BindView(R.id.toolbarC)
     Toolbar toolbar;
+    @BindView(R.id.spinnerLugar)
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registar_contacto);
         mUnbinder = ButterKnife.bind(this);
+
+        String opciones[] = {"Trabajo", "Escuela", "Recreativo", "Otro"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item_tipo_usuario, opciones);
+        spinner.setAdapter(adapter);
 
         toolbar.setTitle("Registrar Contacto");
         toolbar.setNavigationIcon(R.drawable.ic_keyboard);
