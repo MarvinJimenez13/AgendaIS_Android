@@ -13,7 +13,7 @@
     <string name="titulo_registro_contacto">Registrar Contacto</string>
     <string name="registrar_contacto">Registrar</string>
     <string name="titulo_admin_usuarios">Administrar Contactos</string>
-    <string name="descripcion_admin_usuario">Modifica y Elimina los contactos registrados en la Agenda.</string>
+    <string name="descripcion_admin_usuario">Modifica, Busca y Elimina los contactos registrados en la Agenda.</string>
     <string name="ver_contactos">Ver Contactos</string>
     <string name="titulo_contactos">Contactos en Agenda</string>
     <string name="descripcion_contactos">Buscar y Ver los contactos existentes en la Agenda.</string>
@@ -26,4 +26,10 @@
     <string name="registrar_usuario">Registrar Usuario</string>
     <string name="guardar_usuario">Guardar</string>
     <string name="titulo_registro_usuario">Registrar Usuario</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="actualizarContra">Actualizar Contraseña</string>
+    <string name="ver_informes">Ver informes</string>
+    <string name="estadisticas">Estadísticas</string>
+    <string name="descripcion_est">Visualizar las estadísitcas de la Agenda.</string>
 </resources>

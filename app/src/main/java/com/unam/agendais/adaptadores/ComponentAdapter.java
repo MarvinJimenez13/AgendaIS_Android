@@ -42,8 +42,13 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
         Component component = mComponents.get(position);
         holder.setClickListener(mListener, component);
         holder.tvNombre.setText(component.getNombre());
-        holder.tvComentario.setText(component.getComentario());
-        holder.setOnClickListeners(component.getIdAdmin(), component.getNombre(), component.getComentario());
+        String tipo = "";
+        if(component.getTipoAdmin() == Constantes.ADMIN)
+            tipo = "Administrador";
+        else if(component.getTipoAdmin() == Constantes.CAPTURISTA)
+            tipo = "Capturista";
+        holder.tvTipoAdmin.setText(tipo);
+        holder.setOnClickListeners(component.getIdAdmin(), component.getNombre(), component.getTipoAdmin());
 
     }
 
@@ -63,11 +68,12 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
 
         @BindView(R.id.tvNombre)
         TextView tvNombre;
-        @BindView(R.id.tvComentario)
-        TextView tvComentario;
+        @BindView(R.id.tvTipoAdmin)
+        TextView tvTipoAdmin;
         Context context;
 
-        String idAdmin, nombre, comentario;
+        String nombre;
+        int idAdmin, tipoAdmin;
 
         View view;
 
@@ -80,11 +86,11 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
 
         }
 
-        void setOnClickListeners(String idAdmin, String nombre, String comentario){
+        void setOnClickListeners(int idAdmin, String nombre, int tipoAdmin){
 
             this.idAdmin = idAdmin;
             this.nombre = nombre;
-            this.comentario = comentario;
+            this.tipoAdmin = tipoAdmin;
             view.setOnClickListener(this);
 
         }
@@ -102,7 +108,7 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
             intent.putExtra(Constantes.ARG_NAME, "Detalles");
             intent.putExtra("idAdmin", this.idAdmin);
             intent.putExtra("nombre", this.nombre);
-            intent.putExtra("comentario", this.comentario);
+            intent.putExtra("tipoAdmin", this.tipoAdmin);
             context.startActivity(intent);
 
         }

@@ -9,15 +9,15 @@ import com.unam.agendais.fragments.DetallesFragment;
 
 public class CommonUtils {
 
-    private static String nombreS = "", comentarioS = "";
-    private static String idAdminS;
+    private static String nombreS = "";
+    private static int idAdminS, tipoAdminS;
 
 
-    public static void setFragment(AppCompatActivity activity, String nameFragment, int contentRes, String idAdmin, String nombre, String comentario){
+    public static void setFragment(AppCompatActivity activity, String nameFragment, int contentRes, int idAdmin, String nombre, int tipoAdmin){
 
         idAdminS = idAdmin;
         nombreS = nombre;
-        comentarioS = comentario;
+        tipoAdminS = tipoAdmin;
         Fragment fragment = getFragmentById(nameFragment);
         activity.getSupportFragmentManager().beginTransaction().add(contentRes, fragment).commit();
 
@@ -32,9 +32,9 @@ public class CommonUtils {
             case DetallesFragment.TAG:
                 fragment = new DetallesFragment();
                 Bundle bun = new Bundle();
-                bun.putString("idAdmin", idAdminS);
+                bun.putInt("idAdmin", idAdminS);
                 bun.putString("nombre", nombreS);
-                bun.putString("nombre", comentarioS);
+                bun.putInt("tipoAdmin", tipoAdminS);
                 fragment.setArguments(bun);
                 break;
 

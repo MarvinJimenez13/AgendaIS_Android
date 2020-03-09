@@ -246,7 +246,7 @@
                         android:id="@+id/imgContactos"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@mipmap/contactos"
+                        android:src="@mipmap/grafica"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -254,7 +254,7 @@
                         android:id="@+id/verContactosBTN"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/ver_contactos"
+                        android:text="@string/ver_informes"
                         android:layout_marginTop="@dimen/common_padding_min"
                         android:layout_marginStart="@dimen/common_padding_min"
                         android:layout_marginEnd="@dimen/common_padding_min"
@@ -268,7 +268,7 @@
                         android:id="@+id/tvTitleContactos"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/titulo_contactos"
+                        android:text="@string/estadisticas"
                         android:layout_marginStart="@dimen/default_linear"
                         android:layout_marginEnd="@dimen/default_linear"
                         android:textColor="@android:color/black"
@@ -281,7 +281,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:text="@string/descripcion_contactos"
+                        android:text="@string/descripcion_est"
                         android:textColor="@android:color/black"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         app:layout_constraintStart_toStartOf="@id/tvTitleContactos"

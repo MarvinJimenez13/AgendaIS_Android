@@ -8,13 +8,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.unam.agendais.adaptadores.ComponentAdapter;
 import com.unam.agendais.controladores.AdminSQLiteOpenHelper;
-import com.unam.agendais.fragments.DetallesFragment;
+import com.unam.agendais.controladores.ServicioTaskAdmins;
 import com.unam.agendais.fragments.RegistroUsuariosFragment;
 import com.unam.agendais.utils.Constantes;
-
 import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,6 +23,7 @@ import butterknife.Unbinder;
 public class UsuariosAdmins extends AppCompatActivity {
 
     public static ComponentAdapter myAdapter;
+    private String linkAPI = "http://" + Constantes.IP + ":8080/AgendaAPI/admin/obtenerUsuarios";
     private Intent intent;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
@@ -30,6 +31,8 @@ public class UsuariosAdmins extends AppCompatActivity {
     Toolbar toolbar;
     @BindView(R.id.fabNuevo)
     FloatingActionButton fabNuevo;
+    @BindView(R.id.actualizarBTN)
+    MaterialButton actualizarBTN;
     Unbinder mUnbinder;
 
     @Override
@@ -46,6 +49,15 @@ public class UsuariosAdmins extends AppCompatActivity {
 
         });
 
+        actualizarBTN.setOnClickListener(v -> {
+
+            finish();
+            startActivity(getIntent());
+
+        });
+
+        ServicioTaskAdmins adminsTask = new ServicioTaskAdmins(this, linkAPI);
+        adminsTask.execute();
         configAdapter();
         configRecyclerView();
 
@@ -53,7 +65,6 @@ public class UsuariosAdmins extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.ic_keyboard);
         toolbar.setNavigationOnClickListener(v -> {
 
-            /*
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "sesion", null, 1);
             SQLiteDatabase baseDeDatos = admin.getWritableDatabase();
             Cursor fila = baseDeDatos.rawQuery("SELECT idAdmin, nombre, tipoAdmin FROM sesion WHERE id = " + "1", null);
@@ -87,11 +98,7 @@ public class UsuariosAdmins extends AppCompatActivity {
 
                 baseDeDatos.close();
 
-            }*/
-
-            intent = new Intent(this, HomeAdmin.class);
-            startActivity(intent);
-            finish();
+            }
 
         });
 
@@ -100,8 +107,6 @@ public class UsuariosAdmins extends AppCompatActivity {
     public void configAdapter(){
 
         myAdapter = new ComponentAdapter(new ArrayList<>());
-        myAdapter.add(DetallesFragment.getmInstance("1", "Andrea Berenice Cabrera Rivera", "Administrador"));
-        myAdapter.add(DetallesFragment.getmInstance("2", "Martin Jiménez Rodriguez", "Capturista"));
 
     }
 

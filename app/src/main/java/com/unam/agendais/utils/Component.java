@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Component {
 
-    private String nombre, comentario, idAdmin;
-    private int type;
+    private String nombre;
+    private int type, tipoAdmin, idAdmin;
 
     public Component() {
 
@@ -27,20 +27,20 @@ public class Component {
         this.nombre = nombre;
     }
 
-    public String getComentario() {
-        return comentario;
-    }
-
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
-    }
-
-    public String getIdAdmin() {
+    public int getIdAdmin() {
         return idAdmin;
     }
 
-    public void setIdAdmin(String idClase) {
+    public void setIdAdmin(int idClase) {
         this.idAdmin = idClase;
+    }
+
+    public int getTipoAdmin() {
+        return tipoAdmin;
+    }
+
+    public void setTipoAdmin(int tipoAdmin) {
+        this.tipoAdmin = tipoAdmin;
     }
 
     @Override
@@ -48,15 +48,15 @@ public class Component {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Component component = (Component) o;
-        return  type == component.type &&
+        return type == component.type &&
                 Objects.equals(nombre, component.nombre) &&
-                Objects.equals(comentario, component.comentario) &&
+                Objects.equals(tipoAdmin, component.tipoAdmin) &&
                 Objects.equals(idAdmin, component.idAdmin);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, comentario, idAdmin, type);
+        return Objects.hash(nombre, tipoAdmin, idAdmin, type);
     }
 
 }

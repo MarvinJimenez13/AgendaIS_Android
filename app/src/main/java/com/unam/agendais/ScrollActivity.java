@@ -2,15 +2,12 @@ package com.unam.agendais;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import com.unam.agendais.utils.CommonUtils;
 import com.unam.agendais.utils.Constantes;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -30,10 +27,10 @@ public class ScrollActivity extends AppCompatActivity {
         if(savedInstanceState == null){
 
             nameFragment = getIntent().getStringExtra(Constantes.ARG_NAME);
-            String idAdmin = getIntent().getStringExtra("idAdmin");
+            int idAdmin = getIntent().getIntExtra("idAdmin", 0);
             String nombre = getIntent().getStringExtra("nombre");
-            String comentario = getIntent().getStringExtra("comentario");
-            CommonUtils.setFragment(this, nameFragment, R.id.content_scroll, idAdmin, nombre, comentario);
+            int tipoAdmin = getIntent().getIntExtra("tipoAdmin", 0);
+            CommonUtils.setFragment(this, nameFragment, R.id.content_scroll, idAdmin, nombre, tipoAdmin);
 
         }
 
