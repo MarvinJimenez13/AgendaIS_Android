@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import com.unam.agendais.R;
 import com.unam.agendais.utils.ComponentContacto;
-
+import com.unam.agendais.utils.Constantes;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -16,6 +19,8 @@ public class DetallesContactoFragment extends Fragment {
     private static ComponentContacto mInstance;
     public static final String TAG = "Detalles Contacto";
     private Unbinder mUnbinder;
+    @BindView(R.id.spinnerLugar)
+    Spinner spinner;
 
     public DetallesContactoFragment() {
 
@@ -34,6 +39,7 @@ public class DetallesContactoFragment extends Fragment {
         mInstance.setEstado(estado);
         mInstance.setPais(pais);
         mInstance.setComentario(comentario);
+        mInstance.setType(Constantes.SCROLL);
         return mInstance;
 
     }
@@ -43,6 +49,11 @@ public class DetallesContactoFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_detalles_contacto, container, false);
         mUnbinder = ButterKnife.bind(this, view);
+
+        String opciones[] = {"Trabajo", "Escuela", "Recreativo", "Otro"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), R.layout.spinner_item_tipo_usuario, opciones);
+        spinner.setAdapter(adapter);
+
         return view;
 
     }

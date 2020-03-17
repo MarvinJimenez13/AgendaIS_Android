@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 import com.unam.agendais.UsuariosAdmins;
 import com.unam.agendais.fragments.DetallesFragment;
-import com.unam.agendais.utils.Constantes;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -113,14 +112,8 @@ public class ServicioTaskAdmins extends AsyncTask<Void, Void, String>{
 
                         JSONObject usuarioJSON = jsonArray.getJSONObject(i);
                         int tipoINT = Integer.parseInt(String.valueOf(usuarioJSON.getInt("tipoAdmin")));
-                        String tipo = "";
 
-                        if(tipoINT == Constantes.ADMIN)
-                            tipo = "Administrador";
-                        else if(tipoINT == Constantes.CAPTURISTA)
-                            tipo = "Capturista";
-
-                        UsuariosAdmins.myAdapter.add(DetallesFragment.getmInstance(usuarioJSON.getInt("idAdmin"), String.valueOf(usuarioJSON.getString("nombre")), tipoINT));
+                        UsuariosAdmins.myAdapter.add(DetallesFragment.getmInstance(usuarioJSON.getInt("idAdmin"), usuarioJSON.getString("nombre"), tipoINT));
 
                     }
 

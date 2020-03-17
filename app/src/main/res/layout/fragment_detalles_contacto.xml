@@ -1,14 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.DetallesContactoFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/common_padding_default">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilApellidos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Apellidos"
+        android:layout_marginTop="@dimen/common_padding_min"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilNombre"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTelCelular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono Celular"
+        android:layout_marginTop="@dimen/common_padding_min"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_phone_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilApellidos"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietTelCelular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|number">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerLugar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding_default"
+        android:popupBackground="@android:color/darker_gray"
+        android:backgroundTint="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilTelCelular"
+        style="@style/Widget.AppCompat.Spinner.Underlined">
 
-</FrameLayout>
+    </androidx.appcompat.widget.AppCompatSpinner>
+
+    <TextView
+        android:id="@+id/direccionTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding_default"
+        android:text="Dirección"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerLugar">
+
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAvenida"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Avenida / Calle y Número"
+        android:layout_marginTop="@dimen/common_padding_min"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_place"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/direccionTV"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietAvenida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilColonia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Colonia"
+        android:layout_marginTop="@dimen/common_padding_min"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_place"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilAvenida"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietColonia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEstado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Estado"
+        android:layout_marginTop="@dimen/common_padding_min"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_place"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilColonia"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPais"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="País"
+        android:layout_marginTop="@dimen/common_padding_min"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_place"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilEstado"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietPais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/comentarioTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_padding_default"
+        android:text="Comentario"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPais">
+
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilComentario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Comentarios"
+        android:layout_marginTop="@dimen/common_padding_min"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_sms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comentarioTV"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietComentario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registro_datos"
+        android:layout_marginTop="@dimen/common_padding_default"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilComentario">
+
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilFechaRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/fecha_registro"
+        android:layout_marginTop="@dimen/common_padding_default"
+        android:enabled="false"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_eventr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegistro"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietFechaRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAdminRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/admin_registro"
+        android:layout_marginTop="@dimen/common_padding_default"
+        android:enabled="false"
+        app:boxStrokeWidth="3dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_personadmin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilFechaRegistro"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietAdminRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/actualizarBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/actualizar"
+        android:layout_marginTop="@dimen/common_padding_default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilAdminRegistro">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/eliminarBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:layout_marginLeft="@dimen/common_padding_default"
+        app:layout_constraintStart_toEndOf="@id/actualizarBTN"
+        app:layout_constraintTop_toTopOf="@id/actualizarBTN">
+
+    </com.google.android.material.button.MaterialButton>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

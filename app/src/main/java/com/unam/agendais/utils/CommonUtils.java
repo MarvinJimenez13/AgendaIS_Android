@@ -1,15 +1,13 @@
 package com.unam.agendais.utils;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
 import com.unam.agendais.fragments.DetallesFragment;
 
 public class CommonUtils {
 
-    private static String nombreS = "";
+    private static String nombreS;
     private static int idAdminS, tipoAdminS;
 
 

@@ -1,18 +1,18 @@
 package com.unam.agendais;
 
-import android.os.Bundle;
-import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.unam.agendais.utils.CommonUtils;
+import android.os.Bundle;
+import android.view.MenuItem;
+import com.unam.agendais.utils.CommonUtilsContacto;
 import com.unam.agendais.utils.Constantes;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class ScrollActivity extends AppCompatActivity {
+public class ScrollContactoActivity extends AppCompatActivity {
 
     private Unbinder mUnbinder;
     @BindView(R.id.toolbar)
@@ -21,7 +21,7 @@ public class ScrollActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scroll);
+        setContentView(R.layout.activity_scroll_contacto);
         mUnbinder = ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
@@ -29,14 +29,15 @@ public class ScrollActivity extends AppCompatActivity {
         if(savedInstanceState == null){
 
             nameFragment = getIntent().getStringExtra(Constantes.ARG_NAME);
-            int idAdmin = getIntent().getIntExtra("idAdmin", 0);
+            int idContacto = getIntent().getIntExtra("idContacto", 0);
             String nombre = getIntent().getStringExtra("nombre");
-            int tipoAdmin = getIntent().getIntExtra("tipoAdmin", 0);
-            CommonUtils.setFragment(this, nameFragment, R.id.content_scroll, idAdmin, nombre, tipoAdmin);
+            String numero = getIntent().getStringExtra("numero");
+            CommonUtilsContacto.setFragment(this, nameFragment, R.id.content_contacto_scroll, idContacto, nombre, numero);
 
         }
 
         ActionBar actionBar = getSupportActionBar();
+
         if(actionBar != null){
 
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -57,7 +58,6 @@ public class ScrollActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-
     }
 
     @Override

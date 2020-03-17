@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AdministrarContactos"></activity>
+        <activity android:name=".ScrollContactoActivity"></activity>
+        <activity android:name=".AdministrarContactos" />
         <activity android:name=".RegistarContacto" />
         <activity
             android:name=".UsuariosAdmins"

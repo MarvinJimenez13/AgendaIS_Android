@@ -33,7 +33,7 @@ public class UsuariosAdmins extends AppCompatActivity {
     FloatingActionButton fabNuevo;
     @BindView(R.id.actualizarBTN)
     MaterialButton actualizarBTN;
-    Unbinder mUnbinder;
+    private Unbinder mUnbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +67,11 @@ public class UsuariosAdmins extends AppCompatActivity {
 
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "sesion", null, 1);
             SQLiteDatabase baseDeDatos = admin.getWritableDatabase();
-            Cursor fila = baseDeDatos.rawQuery("SELECT idAdmin, nombre, tipoAdmin FROM sesion WHERE id = " + "1", null);
+            Cursor fila = baseDeDatos.rawQuery("SELECT tipoAdmin FROM sesion WHERE id = " + "1", null);
 
             if(fila.moveToFirst()){
 
-                int tipoAdmin = fila.getInt(2);
+                int tipoAdmin = fila.getInt(0);
 
                 if(tipoAdmin == Constantes.ADMIN){
 

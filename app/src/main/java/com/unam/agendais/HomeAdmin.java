@@ -35,6 +35,14 @@ public class HomeAdmin extends AppCompatActivity {
 
     }
 
+    public void administrarContactos(View view){
+
+        intent = new Intent(this, AdministrarContactos.class);
+        startActivity(intent);
+        finish();
+
+    }
+
     public void cerrarSesion(View view){
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "sesion", null, 1);

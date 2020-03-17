@@ -32,4 +32,7 @@
     <string name="ver_informes">Ver informes</string>
     <string name="estadisticas">Estadísticas</string>
     <string name="descripcion_est">Visualizar las estadísitcas de la Agenda.</string>
+    <string name="fecha_registro">Fecha Registro</string>
+    <string name="registro_datos">Datos de Registro</string>
+    <string name="admin_registro">Admin que registró</string>
 </resources>

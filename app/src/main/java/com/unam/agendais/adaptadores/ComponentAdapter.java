@@ -54,7 +54,9 @@ public class ComponentAdapter extends RecyclerView.Adapter<ComponentAdapter.View
 
     @Override
     public int getItemCount() {
+
         return mComponents.size();
+
     }
 
     public void add(Component component){
