@@ -108,7 +108,7 @@ public class ServicioTaskContactos extends AsyncTask<Void, Void, String> {
 
                     JSONObject jsonObject = new JSONObject(resultadoAPI);
                     JSONArray jsonArray = jsonObject.getJSONArray("contactos");
-                    for (int i = 0; 1 < jsonArray.length(); i++){
+                    for (int i = 0; i < jsonArray.length(); i++){
 
                         JSONObject contactoJSON = jsonArray.getJSONObject(i);
                         AdministrarContactos.myAdapter.add(DetallesContactoFragment.getmInstance(contactoJSON.getInt("idContacto"), contactoJSON.getString("nombre"), contactoJSON.getString("apellidos"), contactoJSON.getString("numeroCelular"),
