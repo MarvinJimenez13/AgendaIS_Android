@@ -1,11 +1,9 @@
 package com.unam.agendais.utils;
 
-import java.util.Objects;
-
 public class ComponentContacto {
 
     private int idContacto, type;
-    private String nombre, apellidos, numeroCelular, avenida, colonia, estado, pais, comentario, lugarComun;
+    private String nombre, apellidos, numeroCelular, avenida, colonia, estado, pais, comentario, lugarComun, fechaRegistro, adminRegistro;
 
     public ComponentContacto(){
 
@@ -99,27 +97,20 @@ public class ComponentContacto {
         this.lugarComun = lugarComun;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ComponentContacto that = (ComponentContacto) o;
-        return idContacto == that.idContacto &&
-                type == that.type &&
-                Objects.equals(nombre, that.nombre) &&
-                Objects.equals(apellidos, that.apellidos) &&
-                Objects.equals(numeroCelular, that.numeroCelular) &&
-                Objects.equals(avenida, that.avenida) &&
-                Objects.equals(colonia, that.colonia) &&
-                Objects.equals(estado, that.estado) &&
-                Objects.equals(pais, that.pais) &&
-                Objects.equals(comentario, that.comentario) &&
-                Objects.equals(lugarComun, that.lugarComun);
+    public String getFechaRegistro() {
+        return fechaRegistro;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(idContacto, type, nombre, apellidos, numeroCelular, avenida, colonia, estado, pais, comentario, lugarComun);
+    public void setFechaRegistro(String fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+
+    public String getAdminRegistro() {
+        return adminRegistro;
+    }
+
+    public void setAdminRegistro(String adminRegistro) {
+        this.adminRegistro = adminRegistro;
     }
 
 }

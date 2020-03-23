@@ -1,6 +1,5 @@
 package com.unam.agendais.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import androidx.fragment.app.DialogFragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.unam.agendais.R;
-import com.unam.agendais.UsuariosAdmins;
 import com.unam.agendais.controladores.ServicioTaskRegistro;
 import com.unam.agendais.utils.Constantes;
 import butterknife.BindView;
@@ -87,11 +85,6 @@ public class RegistroUsuariosFragment extends DialogFragment {
         });
         return view;
 
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
     @Override

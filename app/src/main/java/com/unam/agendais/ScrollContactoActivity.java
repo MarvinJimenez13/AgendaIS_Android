@@ -31,8 +31,18 @@ public class ScrollContactoActivity extends AppCompatActivity {
             nameFragment = getIntent().getStringExtra(Constantes.ARG_NAME);
             int idContacto = getIntent().getIntExtra("idContacto", 0);
             String nombre = getIntent().getStringExtra("nombre");
+            String apellidos = getIntent().getStringExtra("apellidos");
             String numero = getIntent().getStringExtra("numero");
-            CommonUtilsContacto.setFragment(this, nameFragment, R.id.content_contacto_scroll, idContacto, nombre, numero);
+            String lugarComun = getIntent().getStringExtra("lugarComun");
+            String avenida = getIntent().getStringExtra("avenida");
+            String colonia = getIntent().getStringExtra("colonia");
+            String estado = getIntent().getStringExtra("estado");
+            String pais = getIntent().getStringExtra("pais");
+            String comentario = getIntent().getStringExtra("comentario");
+            String fechaRegistro = getIntent().getStringExtra("fechaRegistro");
+            String adminRegistro = getIntent().getStringExtra("adminRegistro");
+            CommonUtilsContacto.setFragment(this, nameFragment, R.id.content_contacto_scroll, idContacto, nombre, apellidos, numero, lugarComun, avenida, colonia, estado,
+                    pais, comentario, fechaRegistro, adminRegistro);
 
         }
 

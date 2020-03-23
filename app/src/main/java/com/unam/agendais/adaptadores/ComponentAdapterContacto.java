@@ -45,7 +45,8 @@ public class ComponentAdapterContacto extends RecyclerView.Adapter<ComponentAdap
         holder.setOnClickListener(mListener, component);
         holder.tvNombre.setText(component.getNombre());
         holder.tvNumero.setText(component.getNumeroCelular());
-        holder.setOnClickListeners(component.getIdContacto(), component.getNombre(), component.getNumeroCelular());
+        holder.setOnClickListeners(component.getIdContacto(), component.getNombre(), component.getApellidos(), component.getNumeroCelular(), component.getLugarComun(),
+                component.getAvenida(), component.getColonia(), component.getEstado(), component.getPais(), component.getComentario(), component.getFechaRegistro(), component.getAdminRegistro());
 
     }
 
@@ -73,7 +74,7 @@ public class ComponentAdapterContacto extends RecyclerView.Adapter<ComponentAdap
         TextView tvNumero;
 
         int idContacto;
-        String nombre, numero;
+        String nombre, apellidos, numero, lugarComun, avenida, colonia, estado, pais, comentario, fechaRegistro, adminRegistro;
 
         public  ViewHolderContacto(@NonNull View viewItem){
 
@@ -84,11 +85,21 @@ public class ComponentAdapterContacto extends RecyclerView.Adapter<ComponentAdap
 
         }
 
-        void setOnClickListeners(int idContacto, String nombre, String numero){
+        void setOnClickListeners(int idContacto, String nombre, String apellidos, String numero, String lugarComun, String avenida, String colonia, String estado,
+                                 String pais, String comentario, String fechaRegistro, String adminRegistro){
 
             this.idContacto = idContacto;
             this.nombre = nombre;
+            this.apellidos = apellidos;
             this.numero = numero;
+            this.lugarComun = lugarComun;
+            this.avenida = avenida;
+            this.colonia = colonia;
+            this.estado = estado;
+            this.pais = pais;
+            this.comentario = comentario;
+            this.fechaRegistro = fechaRegistro;
+            this.adminRegistro = adminRegistro;
             view.setOnClickListener(this);
 
         }
@@ -106,7 +117,16 @@ public class ComponentAdapterContacto extends RecyclerView.Adapter<ComponentAdap
             intent.putExtra(Constantes.ARG_NAME, "Detalles Contacto");
             intent.putExtra("idContacto", this.idContacto);
             intent.putExtra("nombre", this.nombre);
+            intent.putExtra("apellidos", this.apellidos);
             intent.putExtra("numero", this.numero);
+            intent.putExtra("lugarComun", this.lugarComun);
+            intent.putExtra("avenida", this.avenida);
+            intent.putExtra("colonia", this.colonia);
+            intent.putExtra("estado", this.estado);
+            intent.putExtra("pais", this.pais);
+            intent.putExtra("comentario", this.comentario);
+            intent.putExtra("fechaRegistro", this.fechaRegistro);
+            intent.putExtra("adminRegistro", this.adminRegistro);
             context.startActivity(intent);
 
         }
